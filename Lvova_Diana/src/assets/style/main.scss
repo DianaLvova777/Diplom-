@@ -1,0 +1,230 @@
+@import "./font.scss";
+@import "./varibles.scss";
+
+.m15 {
+  margin: 15px;
+}
+.mb15 {
+  margin-bottom: 15px;
+}
+.mb25 {
+  margin-bottom: 25px;
+}
+.mb35 {
+  margin-bottom: 35px;
+}
+.mb45 {
+  margin-bottom: 45px;
+}
+.mb55 {
+  margin-bottom: 55px;
+}
+a {
+  color: #2c3e50 !important;
+}
+#app {
+  display: flex;
+  font-size: 14px;
+  letter-spacing: .5px;
+  line-height: 1.8;
+  height: 100vh;
+  background: $bg;
+}
+.page {
+  flex-grow: 1;
+  height: 100%;
+  overflow-x: hidden;
+  overflow-y: auto;
+  &__block {
+    width: 100%;
+    height: 100%;
+    padding: 32px 64px;
+
+    @media (max-width: 450px) { padding: 64px 16px }
+  }
+}
+
+.cardx {
+  width: calc(100% - 30px) !important;
+  height: calc(100% - 30px) !important;
+  margin: 15px !important;
+  @media (max-width: 450px) {
+    width: 100% !important;
+    height: calc(100% - 30px) !important;
+    margin: 15px 0 !important;
+  }
+}
+
+.clearfix::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.menu {
+  display: flex;
+  flex-direction: column;
+  height: calc(100vh - 0px);
+  width: 290px;
+  min-width: 290px;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 42px;
+  background: #ffffff;
+  background: $bg;
+  overflow: hidden;
+  @media (max-width: 850px) {
+    position: absolute;
+    left: -100%;
+    height: 100%;
+    width: 100%;
+    border-radius: 0;
+    overflow: visible;
+    z-index: 999;
+    transition: all .3s $lazy;
+    &.active {
+      left: 0;
+    }
+    & .burger {
+      position: absolute;
+      top: 32px;
+      right: -30px;
+      width: 25px;
+      height: 10px;
+      z-index: 9999;
+      & .line {
+        position: absolute;
+        left: 0;
+        height: 2px;
+        background: $primary;
+        &:nth-child(1) {
+          top: 0;
+          width: 70%;
+        }
+        &:nth-child(2) {
+          bottom: 0;
+          width: 100%;
+        }
+      }
+    }
+  }
+}
+.logo {
+  margin: 30px 30px 100px 30px;
+}
+.nav {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  &__item {
+    position: relative;
+    padding: 15px 30px;
+    transition: all .3s $lazy;
+    color: #fff !important;
+    border-bottom: 1px solid transparent;
+    &--text {
+      margin-left: 10px;
+    }
+    & .nav__item-fill {
+      background: $primary;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 0;
+      height: 100%;
+      transition: all .2s $lazy;
+    }
+    & span {
+      font-weight: 300;
+      position: relative;
+      z-index: 1;
+    }
+    &.router-link-exact-active {
+      color: #fff !important;
+      & .nav__item-fill {
+        background: $primary;
+        background: rgba(255, 255, 255, .3);
+        width: 100%;
+        height: 100%;
+      }
+    }
+  }
+}
+
+.c_tooltip {
+  position: relative;
+  border-radius: 8px;
+  padding: 8px;
+  font-size: 16px;
+  line-height: 1.2;
+  margin-bottom: 10px;
+  background: $success;
+  color: #fff;
+  span {
+    font-weight: bold;
+  }
+  &::before {
+    content: "";
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    bottom: -3px;
+    left: 50%;
+    transform: translateX(-50%) rotate(50deg);
+    background: $success;
+    @media (max-width: 450px) {
+      bottom: -6px;
+      left: 10%;
+    }
+  }
+  &__close {
+    position: absolute;
+    top: 0;
+    right: 5px;
+    font-size: 20px;
+    font-weight: normal !important;
+    cursor: pointer;
+  }
+}
+.auth {
+  padding: 15px 30px;
+  &__link {
+    font-weight: bold;
+    font-size: 18px;
+    color: #fff !important;
+  }
+}
+
+.search {
+  max-width: 480px;
+  .vs-input {
+    width: 100%;
+  }
+}
+.vuesax-app-is-ltr .vs-input--input.hasIcon {
+  font-size: 14px !important;
+  padding-left: 38px;
+}
+.vuesax-app-is-ltr .vs-input--input.hasIcon+.vs-input--placeholder {
+  font-size: 14px !important;
+  padding-left: 38px;
+}
+
+.con-vs-card {
+  background: $bgCard;
+  border-radius: 18px;
+  padding: 24px 16px;
+}
+.vs-con-table, .vs-table--tbody-table tr {
+  background: $bgCard; 
+}
+input {
+  background: $bgCard; 
+}
+
+.w-100 {
+  width: 100%;
+}
+
+.banner {
+  border-radius: 18px;
+}
